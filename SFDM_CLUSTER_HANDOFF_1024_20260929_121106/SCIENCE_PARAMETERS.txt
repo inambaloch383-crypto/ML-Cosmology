@@ -1,0 +1,54 @@
+SFDM 1024^3 PHASE-VALIDATION TARGET
+===================================
+
+Purpose
+-------
+High-resolution convergence/phase-resolution test before any production run.
+
+Cosmology / model
+-----------------
+h                         = 0.674
+Omega_b                   = 0.049309230511847414
+Omega_sfdm                = 0.264
+Omega_m physical          = 0.31330923051184745
+Omega_Lambda              = 0.6866907694881526
+SFDM fraction total matter= 0.842618008951438
+
+SFDM mass
+---------
+m_phi                     = 3.16227766e-22 eV
+nyx.m_tt                  = 3.16227766
+
+Initial conditions
+------------------
+z_ini                     = 120
+box size                  = 30 h^-1 Mpc
+grid                      = 1024^3
+MUSIC levelmin            = 10
+MUSIC levelmin_TF         = 10
+MUSIC levelmax            = 10
+random seed               = 12345
+force_pnorm               = 3.1586221390e-11
+sigma_8 normalization     = 0.823115
+
+Transfer tables
+---------------
+sfdm_m215_z120_WAVE_FINAL.dat
+sfdm_m215_z120_BARYON_PARTICLES_FINAL.dat
+
+Scientific matching requirement
+-------------------------------
+Wave and proxy ICs must use:
+  - the same Gaussian realization / random seed,
+  - the same SFDM-suppressed initial density realization,
+  - the appropriate validated species-specific growing-mode velocities.
+
+The full SFDM wave then evolves with wave dynamics; the collisionless proxy is
+used later as the matched comparison.
+
+Current validation status
+-------------------------
+256^3 density ICs passed MUSIC-vs-CLASS validation but the wave phase was
+severely under-resolved. Therefore 1024^3 is the first serious high-resolution
+phase test. It must be measured directly; earlier 1024 numbers were only a
+forecast from the 256^3 field.

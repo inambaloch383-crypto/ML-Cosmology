@@ -1,0 +1,115 @@
+# ============================================================
+# Pure dark-sector SFDM + collisionless baryon proxy
+# 64^3 initialization / one-step smoke test
+# ============================================================
+
+max_step = 1
+
+nyx.final_a = 1.0
+nyx.initial_z = 120
+
+# ------------------------------------------------------------
+# Cosmology
+# ------------------------------------------------------------
+
+amr.probin_file = probin_sfdm256
+
+# ------------------------------------------------------------
+# MUSIC initial conditions
+# ------------------------------------------------------------
+
+cosmo.ic-source = MUSIC
+
+cosmo.initDirName = /home/hafiz/MUSIC_wang/runs_sfdm256/IC_BARYON_PARTICLES_FINAL256
+
+cosmo.mixed_cosmology = 1
+
+cosmo.FDMinitDirName = /home/hafiz/MUSIC_wang/runs_sfdm256/IC_SFDM_WAVE_FINAL256
+
+# ------------------------------------------------------------
+# Matter components
+# ------------------------------------------------------------
+
+nyx.do_dm_particles = 1
+nyx.particle_init_type = Cosmological
+
+# SFDM fraction of TOTAL matter, including baryons
+nyx.ratio_fdm = 0.842618008951438
+
+# m_phi = 3.40 x 10^-22 eV
+nyx.m_tt = 3.16227766
+
+# Pseudospectral Schrödinger evolution
+# Source definition: PSlevel = 3
+nyx.levelmethod = 3
+
+# Construct initial phase from MUSIC velocity field
+nyx.clear_phase = 0
+
+# ------------------------------------------------------------
+# Grid
+# ------------------------------------------------------------
+
+amr.max_level = 0
+amr.n_cell = 256 256 256
+nyx.n_particles = 256 256 256
+
+geometry.prob_lo = 0.0 0.0 0.0
+geometry.prob_hi = 44.5103857567 44.5103857567 44.5103857567
+
+geometry.is_periodic = 1 1 1
+geometry.coord_sys = 0
+
+amr.blocking_factor = 8
+amr.max_grid_size = 32
+
+amr.initial_grid_file = /home/hafiz/MUSIC_wang/runs_sfdm256/IC_BARYON_PARTICLES_FINAL256/grids_file
+amr.useFixedCoarseGrids = 1
+
+# ------------------------------------------------------------
+# Gravity
+# ------------------------------------------------------------
+
+nyx.do_grav = 1
+gravity.gravity_type = PoissonGrav
+gravity.no_sync = 1
+gravity.no_composite = 1
+mg.bottom_solver = 1
+
+# ------------------------------------------------------------
+# Timestep controls
+# ------------------------------------------------------------
+
+nyx.cfl = 0.9
+nyx.init_shrink = 1.0
+nyx.change_max = 1.05
+nyx.dt_cutoff = 5.e-20
+
+# ------------------------------------------------------------
+# Output / diagnostics
+# ------------------------------------------------------------
+
+nyx.sum_interval = 1
+
+nyx.v = 1
+gravity.v = 1
+amr.v = 1
+mg.v = 0
+particles.v = 1
+
+amr.check_file = chk_FINAL256_
+amr.check_int = 1
+
+amr.plot_file = plt_FINAL256_
+amr.plot_int = 1
+
+nyx.print_fortran_warnings = 0
+nyx.particle_move_type = Gravitational
+
+nyx.lo_bc = 0 0 0
+nyx.hi_bc = 0 0 0
+
+# Cosmology required directly by this AxioNyx branch
+nyx.comoving_OmM = 0.31330923051184745
+nyx.comoving_OmB = 0.049309230511847414
+nyx.comoving_h   = 0.674

@@ -1,0 +1,132 @@
+
+    __    __     __  __     ______     __     ______      
+   /\ "-./  \   /\ \/\ \   /\  ___\   /\ \   /\  ___\  
+   \ \ \-./\ \  \ \ \_\ \  \ \___  \  \ \ \  \ \ \____ 
+    \ \_\ \ \_\  \ \_____\  \/\_____\  \ \_\  \ \_____\ 
+     \/_/  \/_/   \/_____/   \/_____/   \/_/   \/_____/ 
+
+                            this is music! version 1.53
+
+ - Version was compiled for double precision.
+
+
+ - Opening log file 'runs_velocity_routing_test/music_velocity_col12_x2.conf_log.txt'.
+ - Using k-space sampled transfer functions...
+ - Selecting transfer function plug-in 'camb_file'...
+ - Reading tabulated transfer function data from file 
+    '/home/hafiz/MUSIC_wang/runs_velocity_routing_test/sfdm_wave_col12_x2.dat'
+ - CAUTION: make sure that this transfer function 
+	 has been output for z=120.000000!
+ - Read CAMB transfer function table with 600 rows
+ - starting at a=0.00826446
+ - Selecting region generator plug-in 'box'...
+ - Selecting random number generator plug-in 'MUSIC'...
+-------------------------------------------------------------
+ - Grid structure:
+     Level   6 :   offset = (    0,     0,     0)
+                     size = (   64,    64,    64)
+-------------------------------------------------------------
+ - Finest level :
+                   extent =  30 x 30 x 30 h-3 Mpc**3
+                 mtotgrid =  2.34764e+15 h-1 M_o
+            particle mass =  7.54608e+09 h-1 M_o
+         baryon mass/cell =  1.40944e+09 h-1 M_o
+                       dx =  0.46875 h-1 Mpc
+-------------------------------------------------------------
+ - Selecting output plug-in 'nyx'...
+1 level
+(0,0,0)
+(63,63,63)
+creating output object
+=============================================================
+   GENERATING WHITE NOISE
+-------------------------------------------------------------
+ - Found 0 density constraint(s) to be obeyed.
+ - Generating random numbers (2) with seed 12345
+ - Generating random numbers w/ sample cube size of 32
+=============================================================
+   COMPUTING DARK MATTER DISPLACEMENTS
+-------------------------------------------------------------
+ - Using k-space transfer function kernel.
+ - Performing noise convolution on level   6
+   - Performing density convolution... (64, 64, 64)
+ - Density calculation took 0.021037645s with 8 threads.
+ - Top grid mean density is off by 1.179559554e-21, correcting...
+-------------------------------------------------------------
+ - Invoking unigrid FFT Poisson solver...
+ - max. x-displacement of HR particles is -0.241767 [mean dx]
+ParticleDisplacements_x is dumped... to mf index 4
+64 64 64
+ - max. y-displacement of HR particles is -0.197488 [mean dx]
+ParticleDisplacements_y is dumped... to mf index 5
+64 64 64
+ - max. z-displacement of HR particles is 0.216022 [mean dx]
+ParticleDisplacements_z is dumped... to mf index 6
+64 64 64
+=============================================================
+   COMPUTING BARYON DENSITY
+-------------------------------------------------------------
+ - Using k-space transfer function kernel.
+ - Performing noise convolution on level   6
+   - Performing density convolution... (64, 64, 64)
+ - Density calculation took 0.017542845s with 8 threads.
+ - Top grid mean density is off by 1.179559554e-21, correcting...
+density is dumped... to mf index 0
+64 64 64
+ - Computing separate velocities for CDM and baryons:
+=============================================================
+   COMPUTING DARK MATTER VELOCITIES
+-------------------------------------------------------------
+ - Using k-space transfer function kernel.
+ - Performing noise convolution on level   6
+   - Performing density convolution... (64, 64, 64)
+ - Density calculation took 0.015843073s with 8 threads.
+ - Top grid mean density is off by -1.956778457e-20, correcting...
+-------------------------------------------------------------
+ - Invoking unigrid FFT Poisson solver...
+ - sigma of x-velocity of high-res DM is 0.551976
+ParticleVelocities_x is dumped... to mf index 7
+64 64 64
+ - sigma of y-velocity of high-res DM is 0.479372
+ParticleVelocities_y is dumped... to mf index 8
+64 64 64
+ - sigma of z-velocity of high-res DM is 0.446330
+ParticleVelocities_z is dumped... to mf index 9
+64 64 64
+=============================================================
+   COMPUTING BARYON VELOCITIES
+-------------------------------------------------------------
+ - Using k-space transfer function kernel.
+ - Performing noise convolution on level   6
+   - Performing density convolution... (64, 64, 64)
+ - Density calculation took 0.017995241s with 8 threads.
+ - Top grid mean density is off by 2.81304274e-19, correcting...
+-------------------------------------------------------------
+ - Invoking unigrid FFT Poisson solver...
+ - sigma of x-velocity of high-res baryons is 1.103953
+GridVelocities_x is dumped... to mf index 1
+64 64 64
+ - sigma of y-velocity of high-res baryons is 0.958743
+GridVelocities_y is dumped... to mf index 2
+64 64 64
+ - sigma of z-velocity of high-res baryons is 0.892661
+GridVelocities_z is dumped... to mf index 3
+64 64 64
+finalizing...
+in writeLevelPlotFile
+0.6954747774
+((0,0,0) (31,31,31) (0,0,0))
+((32,0,0) (63,31,31) (0,0,0))
+((0,32,0) (31,63,31) (0,0,0))
+((0,0,32) (31,31,63) (0,0,0))
+((32,32,0) (63,63,31) (0,0,0))
+((32,0,32) (63,31,63) (0,0,0))
+((0,32,32) (31,63,63) (0,0,0))
+((32,32,32) (63,63,63) (0,0,0))
+in writeGridsFile
+destroying output object
+=============================================================
+ - Wrote output file '/home/hafiz/MUSIC_wang/runs_velocity_routing_test/IC_COL12_X2'
+     using plugin 'nyx'...
+ - Done!
+

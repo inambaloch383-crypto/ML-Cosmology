@@ -1,0 +1,15 @@
+CEXE_sources   += Nyx_setup.cpp
+CEXE_sources   += Nyx_initdata.cpp
+CEXE_sources   += Nyx_initcosmo.cpp
+#CEXE_sources   += read_plotfile.cpp
+
+CEXE_sources += bc_fill.cpp
+CEXE_headers += bc_fill.H
+
+ifeq ($(USE_AXCOMPLEX), TRUE)
+CEXE_sources += initialize_axion_string_simulation.cpp
+endif
+
+ifeq ($(USE_AXREAL), TRUE)
+CEXE_sources += initialize_axion_only_simulation.cpp
+endif

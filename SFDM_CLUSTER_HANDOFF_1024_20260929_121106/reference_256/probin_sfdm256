@@ -1,0 +1,6 @@
+&fortin
+  comoving_OmM = 0.31330923051184745d0
+  comoving_OmB = 0.049309230511847414d0
+  comoving_OmL = 0.6866907694881526d0
+  comoving_h   = 0.674d0
+/

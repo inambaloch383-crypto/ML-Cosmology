@@ -1,0 +1,24 @@
+SFDM cluster handoff generated: 2026-09-29T12:11:09-06:00
+
+Exact source trees included:
+  code/MUSIC_wang
+  code/axionyx_wang2026
+  code/BoxLib_legacy
+
+Validated transfer tables included:
+  data/transfer/sfdm_m215_z120_WAVE_FINAL.dat
+  data/transfer/sfdm_m215_z120_BARYON_PARTICLES_FINAL.dat
+
+Portable generated templates:
+  config_templates/music_sfdm_wave_FINAL1024.conf.template
+  config_templates/music_baryon_particles_FINAL1024.conf.template
+  config_templates/inputs_sfdm1024_PHASECHECK.template
+
+Original 256^3 reference files used to generate templates:
+  music_sfdm_wave_FINAL256.conf
+  music_baryon_particles_FINAL256.conf
+  inputs_sfdm256_FINAL
+
+Important:
+  1024^3 is a validation run, not full production.
+  The actual phase-alias fraction must be measured from the generated output.
